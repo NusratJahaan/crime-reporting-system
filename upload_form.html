@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Evidence</title>
+</head>
+<body>
+
+<h2>Upload Evidence for Crime Report</h2>
+
+<form action="upload_evidence.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="report_id" id="report_id">
+    
+    <label>Select file:</label>
+    <input type="file" name="evidence" required><br><br>
+    
+    <button type="submit">Upload Evidence</button>
+</form>
+
+<script>
+// Get report_id from URL and set it to hidden input
+const urlParams = new URLSearchParams(window.location.search);
+const reportId = urlParams.get('report_id');
+document.getElementById('report_id').value = reportId;
+</script>
+
+</body>
+</html>
+
